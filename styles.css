@@ -1,0 +1,217 @@
+body,
+li,
+li,
+h1,
+h2,
+a {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.banner {
+  position: relative;
+  /* Because this must have a positon property, for the words 
+  Welcome... to be positioned (absolutely) to it*/
+  /* For this to happen, we must give it any position: property apart from static, 
+  but don't move it around left or anyhwere, it stays 00px relative to it's positon -retains position
+  We can then postion any children elements absolutely in their parents' accordance
+  
+  THE BUNNER HOUSES THE WORDS - WELCOME TO Max...*/
+}
+
+.banner img {
+  max-width: 100%;
+}
+
+.banner .welcome {
+  position: absolute;
+  left: 0px;
+  top: 30%;
+  background-color: #feb614;
+  color: #ffffff;
+  padding: 30px;
+}
+
+.banner h2 {
+  font-size: 74px;
+}
+
+.banner h2 span {
+  font-size: 1.3em;
+}
+
+header {
+  background-color: #f63232;
+  padding: 20px;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  top: 0; /* from the viewpoint*/
+  left: 0; /* from the viewpoint*/
+}
+
+header h1 {
+  color: #ffffff;
+  border: 8px solid #ffffff;
+  display: inline-block; /*Stop it from taking all width on page, but use padding still*/
+  padding: 6px 12px; /*Means 6px to top and bottom, 12px to left and right*/
+  border-radius: 1360px;
+}
+
+nav {
+  background-color: #f4f4f4;
+  padding: 20px;
+  position: sticky; /* be static, do nothing but at top: 14px, become fixed*/
+  top: 103px;
+}
+
+nav ul {
+  white-space: nowrap;
+  max-width: 1200px;
+  margin: 0 auto; /*Means 0px to top and bottom, auto to left and right*/
+}
+
+nav li {
+  width: 25%;
+  display: inline-block;
+  font-size: 24px;
+}
+
+nav li a {
+  text-decoration: none;
+  color: #4b4b4b;
+}
+
+nav li a.join {
+  color: #f63232;
+}
+
+main {
+  max-width: 100%;
+  width: 1200px;
+  margin: 80px auto; /*Centering content basically*/
+  padding: 0 40px;
+  box-sizing: border-box; /*Include the padding in total width */
+}
+
+article h2 {
+  color: #f63232;
+  font-size: 48px;
+}
+
+article p {
+  line-height: 2em;
+  color: #4b4b4b;
+}
+
+.images {
+  text-align: center;
+  margin: 80px auto;
+  white-space: nowrap;
+}
+
+.images li {
+  display: inline-block;
+  width: 40%;
+  margin: 20px 5%;
+}
+
+.images li img {
+  max-width: 100%;
+}
+
+section.join {
+  background: #f4f4f4;
+  text-align: center;
+  padding: 60px 20px;
+  color: #4b4b4b;
+}
+
+.join h2 {
+  font-size: 36px;
+}
+
+form input {
+  margin: 20px 0;
+  padding: 10px 20px;
+  font-size: 24px;
+  border-radius: 28px;
+  border: 4px solid white;
+}
+
+footer {
+  background: #f62323;
+  color: #ffffff;
+  padding: 10px;
+  text-align: center;
+}
+
+/* CSS Pseudo class */
+nav li a:hover {
+  text-decoration: underline;
+}
+
+.images li:hover {
+  position: relative;
+  top: -4px;
+}
+
+form input:focus {
+  border: 4px dashed #4b4b4b;
+  outline: none;
+}
+
+form input:valid {
+  border: 4px solid #71d300;
+  outline: none;
+}
+
+/* nav li:first-child {
+    border: 4px dashed #f62323;
+} */
+
+/* CSS Pseudo elements */
+
+article p::first-line {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+/*Media Queries*/
+@media screen and (max-width: 1400px) {
+  .banner .welcome h2 {
+    font-size: 60px;
+  }
+
+  nav li {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .banner .welcome h2 {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .banner .welcome {
+    position: relative; /*Go back to original position*/
+    text-align: center;
+    padding: 2px;
+  }
+
+  .banner .welcome br {
+    display: none;
+  }
+
+  .banner .welcome h2 {
+    font-size: 25px;
+  }
+
+  .banner .welcome span {
+    font-size: 1em;
+  }
+}
